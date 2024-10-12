@@ -42,4 +42,8 @@ public class Product extends Timestamped {
     public void update(int myprice) {
         this.myprice = myprice;
     }
+
+    public void autoUpdate(int lprice) {
+        this.lprice = lprice;
+    }
 }
