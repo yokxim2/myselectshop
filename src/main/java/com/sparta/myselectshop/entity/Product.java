@@ -38,4 +38,8 @@ public class Product extends Timestamped {
         this.link = link;
         this.lprice = lprice;
     }
+
+    public void update(int myprice) {
+        this.myprice = myprice;
+    }
 }
