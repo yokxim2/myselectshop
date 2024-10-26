@@ -23,8 +23,8 @@ import java.util.Optional;
 public class ProductService {
 
     private final ProductRepository productRepository;
-    private final FolderRepository folderRepository;
     private final ProductFolderRepository productFolderRepository;
+    private final FolderRepository folderRepository;
 
     public static final int MIN_MY_PRICE = 100;
 
@@ -43,7 +43,7 @@ public class ProductService {
     public ProductResponseDto updateProduct(Long id, ProductMypriceRequestDto requestDto) {
         int myprice = requestDto.getMyprice();
         if (myprice < MIN_MY_PRICE) {
-            throw new IllegalArgumentException("유효하지 않은 관심 가격입니다. 최소 " + MIN_MY_PRICE + "원 이상으로 설정해주세요.");
+            throw new IllegalArgumentException("유효하지 않은 관심 가격입니다. 최소 " + MIN_MY_PRICE + "원 이상으로 설정해 주세요.");
         }
 
         Product product = productRepository.findById(id).orElseThrow(() ->

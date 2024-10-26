@@ -1,5 +1,6 @@
 package com.sparta.myselectshop.entity;
 
+import com.sparta.myselectshop.dto.ProductRequestDto;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -46,6 +47,14 @@ public class Product extends Timestamped {
         this.image = image;
         this.link = link;
         this.lprice = lprice;
+        this.user = user;
+    }
+
+    public Product(ProductRequestDto requestProductDto, User user) {
+        this.title = requestProductDto.getTitle();
+        this.image = requestProductDto.getImage();
+        this.link = requestProductDto.getLink();
+        this.lprice = requestProductDto.getLprice();
         this.user = user;
     }
 
